@@ -21,9 +21,9 @@ export default function Skills() {
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {skills.map((s) => (
-        <div key={s.group} className="rounded-xl border border-gray-200 p-5 bg-white">
-          <h3 className="font-medium text-gray-900 mb-2">{s.group}</h3>
-          <ul className="text-sm text-gray-700 space-y-1">
+        <div key={s.group} className="rounded-xl border border-gray-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-900/60">
+          <h3 className="font-medium text-gray-900 dark:text-white mb-2">{s.group}</h3>
+          <ul className="text-sm text-gray-700 dark:text-slate-300 space-y-1">
             {s.items.map((i) => (
               <li key={i}>• {i}</li>
             ))}

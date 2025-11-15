@@ -20,12 +20,12 @@ export default function Projects() {
   return (
     <div className="grid md:grid-cols-3 gap-4">
       {projects.map((p) => (
-        <div key={p.title} className="rounded-xl border border-gray-200 p-5 bg-white">
-          <h3 className="font-medium text-gray-900">{p.title}</h3>
-          <p className="mt-2 text-sm text-gray-700">{p.desc}</p>
+        <div key={p.title} className="rounded-xl border border-gray-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-900/60">
+          <h3 className="font-medium text-gray-900 dark:text-white">{p.title}</h3>
+          <p className="mt-2 text-sm text-gray-700 dark:text-slate-300">{p.desc}</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {p.tags.map((t) => (
-              <span key={t} className="text-xs px-2 py-1 rounded-lg bg-gray-100 text-gray-700">{t}</span>
+              <span key={t} className="text-xs px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-300">{t}</span>
             ))}
           </div>
         </div>
