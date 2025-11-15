@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const experiences = [
   {
     role: 'Magang IT Support',
@@ -21,11 +23,24 @@ const experiences = [
   }
 ]
 
+const variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08 } })
+}
+
 export default function Experience() {
   return (
     <div className="space-y-4">
-      {experiences.map((e) => (
-        <div key={e.role} className="rounded-xl border border-gray-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-900/60">
+      {experiences.map((e, idx) => (
+        <motion.div
+          key={e.role}
+          custom={idx}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={variants}
+          className="rounded-xl border border-gray-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-900/60 transition-transform hover:-translate-y-1"
+        >
           <div className="flex items-center justify-between">
             <div>
               <h3 className="font-medium text-gray-900 dark:text-white">{e.role}</h3>
@@ -38,7 +53,7 @@ export default function Experience() {
               <li key={p}>{p}</li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       ))}
     </div>
   )
